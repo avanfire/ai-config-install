@@ -118,7 +118,6 @@ EOF
     say "[4/5] Signed in to GitHub."
   else
     say "[4/5] You are not signed in to GitHub."
-    say "      If GitHub CLI asks 'Authenticate Git with your GitHub credentials?', answer n (this setup uses its own access)."
     # GIT_CONFIG_GLOBAL points at a throwaway file, so even if gh offers (and you accept) to set up git
     # credentials, your real global git config is not modified.
     GIT_CONFIG_GLOBAL=$(mktemp) gh auth login --hostname github.com --git-protocol https --web </dev/tty || die "GitHub sign-in failed"

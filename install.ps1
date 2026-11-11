@@ -99,7 +99,6 @@ function Main {
     Write-Host "[4/5] Signed in to GitHub."
   } else {
     Write-Host "[4/5] You are not signed in to GitHub."
-    Write-Host "      If GitHub CLI asks 'Authenticate Git with your GitHub credentials?', answer n (this setup uses its own access)."
     # GIT_CONFIG_GLOBAL points at a throwaway file, so your real global git config is never modified.
     $env:GIT_CONFIG_GLOBAL = [IO.Path]::GetTempFileName()
     try { gh auth login --hostname github.com --git-protocol https --web } finally { Remove-Item Env:GIT_CONFIG_GLOBAL -ErrorAction SilentlyContinue }
